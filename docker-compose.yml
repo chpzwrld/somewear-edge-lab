@@ -1,0 +1,12 @@
+# Run the course in Docker:  docker compose run --rm course
+services:
+  course:
+    build: .
+    image: somewear-edge-lab
+    container_name: somewear-edge-lab
+    privileged: true          # Module 3 builds a virtual network (needs network-admin rights)
+    volumes:
+      - .:/course             # your edits on the host appear inside instantly
+    working_dir: /course
+    stdin_open: true
+    tty: true

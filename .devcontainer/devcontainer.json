@@ -1,0 +1,15 @@
+{
+  "name": "Somewear Edge Lab",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  // Module 3 builds a small virtual network (veth links + a network namespace),
+  // which needs network-admin rights inside the container.
+  "privileged": true,
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postAttachCommand": "python3 course.py",
+  "customizations": {
+    "codespaces": { "openFiles": ["lessons/00-welcome.md"] },
+    "vscode": { "extensions": ["ms-python.python"] }
+  }
+  // No forwardPorts: Codespaces forwards TCP only, and this lab's MAVLink (UDP 14550)
+  // and CoT (UDP multicast 6969) traffic stays inside the container.
+}

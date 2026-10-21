@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.log
+*.bak
+.course_progress.json
+.course/

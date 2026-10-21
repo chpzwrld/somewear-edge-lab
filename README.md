@@ -36,17 +36,19 @@ automatically (~2 minutes); Lesson 0 opens when it's ready.
 
 ### Option B - Docker, on your own computer (Linux, macOS or Windows)
 
-Requires [Docker](https://docs.docker.com/get-docker/). Then:
+1. Install [Docker Desktop](https://docs.docker.com/get-docker/) (Linux: Docker Engine) and
+   start it. Works on Intel and Apple-silicon Macs, Windows 10/11 and Linux.
+2. Get the course: unzip `somewear-edge-lab.zip`, or
+   `git clone https://github.com/chpzwrld/somewear-edge-lab.git`
+3. Launch it:
+   - **macOS / Linux:** open a terminal in the folder and run `./launch.sh`
+   - **Windows:** double-click `launch.cmd` (or run it from PowerShell)
 
-```bash
-git clone https://github.com/chpzwrld/somewear-edge-lab.git
-cd somewear-edge-lab
-./launch.sh            # Windows (PowerShell): docker compose run --rm course
-```
-
-You get a terminal inside the course environment. Edit the files in the cloned folder with
-any editor on your computer - changes show up inside the container instantly. Need a second
-terminal? Run `./launch.sh shell` in another window.
+The first launch builds the course environment (a few minutes), then drops you into a
+terminal inside it, showing your progress. Edit the files in the course folder with any
+editor on your computer (VS Code, Notepad++, ...) - changes show up inside instantly and
+your work stays in the folder. Need a second terminal? Run `./launch.sh` (or `launch.cmd`)
+again in another window while the first is open. Type `exit` to leave.
 
 ### Option C - VS Code Dev Containers (local, no cloud)
 

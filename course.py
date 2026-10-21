@@ -218,8 +218,8 @@ def cmd_lesson(args):
     path = ROOT / rel
     if os.environ.get("TERM_PROGRAM") == "vscode" and shutil.which("code"):
         subprocess.run(["code", str(path)])
-        print(f"Opened {rel} in the editor.")
-        print("Tip: press Ctrl+Shift+V (Cmd+Shift+V on Mac) for the formatted preview.")
+        print(f"Opened {rel} in the editor (as a read-only formatted page).")
+        print("Click back in this terminal before typing your next command.")
     else:
         pydoc.pager(path.read_text())
         print(f"(Lesson file: {rel} - open it in any Markdown viewer for nicer formatting.)")
